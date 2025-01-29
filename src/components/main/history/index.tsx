@@ -88,27 +88,27 @@ function Hist() {
         <button>See all</button>
       </div>
       <div className="w-full overflow-y-scroll">
-
         {
           mocked.map((item: historyType) => (
-            <button className="flex items-center justify-between w-full px-4 h-20 rounded-2xl mt-2 hover:bg-primary-light">
+            <button className="flex gap-4 items-center w-full px-4 h-20 rounded-2xl mt-2 hover:bg-primary-light">
               <div className="bg-primary-extralight p-3 rounded-full">
                 {item.logo}
               </div>
-              <div className="flex flex-col">
-                <div>{item.name}</div>
-                <div className="text-sm text-primary-ultralight">{item.description}</div>
-              </div>
-              <div className="flex flex-col">
-                <div>{item.value}</div>
-                <div className="text-sm text-primary-ultralight">{item.date}</div>
+              <div className="flex w-full justify-between">
+                <div className="flex flex-col items-start">
+                  <div>{item.name}</div>
+                  <div className="text-sm text-primary-ultralight">{item.description}</div>
+                </div>
+                <div className="flex flex-col">
+                  <div>{item.value}</div>
+                  <div className="text-sm text-primary-ultralight">{item.date}</div>
+                </div>
               </div>
             </button>
           ))
         }
       </div>
     </div>
-
   )
 }
 
