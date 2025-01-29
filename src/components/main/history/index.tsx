@@ -35,17 +35,59 @@ function Hist() {
         description: "Stream",
         value: "-$7.49",
         date: "Sep 10th"
+      },
+      {
+        logo: <SiAppletv size="1.5rem" />,
+        name: "Apple TV",
+        description: "Premium Family",
+        value: "-$4.99",
+        date: "Sep 29th"
+      },
+      {
+        logo: <BsDropbox size="1.5rem" />,
+        name: "Dropbox",
+        description: "Advanced",
+        value: "-$9.99",
+        date: "Sep 25th"
+      },
+      {
+        logo: <SiPrime size="1.5rem" />,
+        name: "Amazon Prime",
+        description: "Stream",
+        value: "-$7.49",
+        date: "Sep 10th"
+      },
+      {
+        logo: <SiAppletv size="1.5rem" />,
+        name: "Apple TV",
+        description: "Premium Family",
+        value: "-$4.99",
+        date: "Sep 29th"
+      },
+      {
+        logo: <BsDropbox size="1.5rem" />,
+        name: "Dropbox",
+        description: "Advanced",
+        value: "-$9.99",
+        date: "Sep 25th"
+      },
+      {
+        logo: <SiPrime size="1.5rem" />,
+        name: "Amazon Prime",
+        description: "Stream",
+        value: "-$7.49",
+        date: "Sep 10th"
       }
     ]
   );
 
   return (
-    <div className="flex flex-col w-full px-4 py-8 overflow-y-scroll">
+    <div className="flex flex-col w-full px-4 py-8 h-[50vh]">
       <div className="flex justify-between items-end w-full">
         <h3 className="text-[1.5rem]">History</h3>
         <button>See all</button>
       </div>
-      <div className="w-full">
+      <div className="w-full overflow-y-scroll">
 
         {
           mocked.map((item: historyType) => (

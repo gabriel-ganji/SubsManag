@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  
+
   h1 {
     font-size: 3.5rem;
     font-weight: 500;
@@ -32,7 +32,7 @@
 
 
 :root {
-  font-family:  "Jost", serif;
+  font-family: "Jost", serif;
 
   background-color: #1b1b1b;
 
@@ -45,10 +45,36 @@
 
   padding: 0;
   margin: 0;
-  
+
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (min-width: 990px) {
+  ::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #4b4b4b;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #313131;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
