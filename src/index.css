@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h3 {
+    font-size: 3.5rem;
+  }
+}
+
+
+:root {
+  font-family:  "Jost", serif;
+
+  background-color: #1b1b1b;
+
+  color: #dddddd;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding: 0;
+  margin: 0;
+  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
