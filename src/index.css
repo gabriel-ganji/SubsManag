@@ -3,9 +3,31 @@
 @tailwind utilities;
 
 @layer base {
-  h3 {
+  
+  h1 {
     font-size: 3.5rem;
+    font-weight: 500;
   }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
 }
 
 
@@ -14,7 +36,7 @@
 
   background-color: #1b1b1b;
 
-  color: #dddddd;
+  color: #f3f4f6;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
