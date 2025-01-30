@@ -14,8 +14,6 @@ const Services = () => {
       ...prev,
       [id]: !prev[id],
     }));
-    console.log(id);
-    console.log(isOnMap);
   };
 
   const navigate = useNavigate();

@@ -51,14 +51,17 @@ export const servicesInfo: ServicesType[] = [
 export const userServicesUse: UserServicesUseType[] = [
     {
         value: "-$4.99",
-        id: "12313120Apple"
+        id: "12313120Apple",
+        date: "Sep 29th",
     },
     {
         value: "-$9.99",
-        id: "12313121Dropbox"
+        id: "12313121Dropbox",
+        date: "Sep 25th",
     },
     {
         value: "-$7.49",
-        id: "12313122Amazon"
+        id: "12313122Amazon",
+        date: "Sep 10th"
     },
 ]
