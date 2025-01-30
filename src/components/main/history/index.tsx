@@ -22,8 +22,6 @@ const Hist = () => {
     }
   });
 
-  console.log(userServicesHistory);
-
   const navigate = useNavigate();
 
   const handleClick = (serviceId: string) => {
@@ -40,6 +38,7 @@ const Hist = () => {
         {
           userServicesHistory.map((item: BothUserServicesType) => (
             <button
+            key={item.id}
               className="flex gap-4 items-center w-full px-5 py-12 h-20 rounded-2xl mt-2 hover:bg-primary-light"
               onClick={() => handleClick(item.id)}
             >
