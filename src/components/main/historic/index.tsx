@@ -34,7 +34,7 @@ const Hist = () => {
         <h3>Historic</h3>
         <button>See all</button>
       </div>
-      <div className="w-full overflow-y-scroll">
+      <div className="w-full overflow-y-scroll mb-12">
         {
           userServicesHistory.map((item: BothUserServicesType) => (
             <button
