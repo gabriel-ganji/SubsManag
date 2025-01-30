@@ -1,86 +1,52 @@
-import { ReactNode } from "react";
+import { FaFigma } from "react-icons/fa";
+import { SiPrime } from "react-icons/si";
 import { SiAppletv } from "react-icons/si";
 import { BsDropbox } from "react-icons/bs";
-import { SiPrime } from "react-icons/si";
-
-type ServicesType = {
-  logo: ReactNode;
-  name: string;
-  description: string;
-  price: string;
-  id: string;
-}
+import { SiNetflix } from "react-icons/si";
+import { ServicesType, UserServicesUseType } from "./types";
 
 export const servicesInfo: ServicesType[] = [
     {
-        logo: <SiAppletv size="1.5rem" />,
-        name: "Apple TV",
-        description: "Premium Family",
-        price: "20",
-        id: "12313120Apple"
-    },
-    {
         logo: <BsDropbox size="1.5rem" />,
         name: "Dropbox",
+        image: "https://www.logo.wine/a/logo/Dropbox_(service)/Dropbox_(service)-White-Dark-Background-Logo.wine.svg",
         description: "Advanced",
-        price: "18,50",
+        price: "20,00",
         id: "12313121Dropbox"
     },
     {
-        logo: <SiPrime size="1.5rem" />,
-        name: "Amazon Prime",
-        description: "Stream",
+        logo: <SiNetflix size="1.5rem" />,
+        name: "Netflix",
+        image: "https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png?w=700&h=456",
+        description: "Premium",
         price: "9,99",
-        id: "12313122Amazon"
+        id: "12313120Netflix"
     },
     {
         logo: <SiAppletv size="1.5rem" />,
         name: "Apple TV",
+        image: "https://cdn.vox-cdn.com/thumbor/CmNJgSUD10NOWE7VItdyuWIxV-g=/0x0:2040x1360/1400x1400/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23988689/acastro_STK069_appleTVPlus_02.jpg",
         description: "Premium Family",
-        price: "20",
+        price: "14,95",
         id: "12313120Apple"
     },
     {
-        logo: <BsDropbox size="1.5rem" />,
-        name: "Dropbox",
-        description: "Advanced",
-        price: "18,50",
-        id: "12313121Dropbox"
+        logo: <FaFigma size="1.5rem" />,
+        name: "Figma",
+        image: "https://s3-alpha.figma.com/hub/file/1166690750/85f69649-5387-44c2-ba45-81ae13812e36-cover.png",
+        description: "Professional",
+        price: "12,00",
+        id: "12313122Figma"
     },
     {
         logo: <SiPrime size="1.5rem" />,
         name: "Amazon Prime",
-        description: "Stream",
-        price: "9,99",
+        image: "https://tm.ibxk.com.br/2021/02/12/12224528436398.jpg",
+        description: "Student",
+        price: "7,49",
         id: "12313122Amazon"
     },
-    {
-        logo: <SiAppletv size="1.5rem" />,
-        name: "Apple TV",
-        description: "Premium Family",
-        price: "20",
-        id: "12313120Apple"
-    },
-    {
-        logo: <BsDropbox size="1.5rem" />,
-        name: "Dropbox",
-        description: "Advanced",
-        price: "18,50",
-        id: "12313121Dropbox"
-    },
-    {
-        logo: <SiPrime size="1.5rem" />,
-        name: "Amazon Prime",
-        description: "Stream",
-        price: "9,99",
-        id: "12313122Amazon"
-    }
 ]
-
-type UserServicesUseType = {
-    value: string;
-    id: string;
-} 
 
 export const userServicesUse: UserServicesUseType[] = [
     {
@@ -95,28 +61,4 @@ export const userServicesUse: UserServicesUseType[] = [
         value: "-$7.49",
         id: "12313122Amazon"
     },
-    {
-        value: "-$4.99",
-        id: "12313120Apple"
-    },
-    {
-        value: "-$9.99",
-        id: "12313121Dropbox"
-    },
-    {
-        value: "-$7.49",
-        id: "12313122Amazon"
-    },
-    {
-        value: "-$4.99",
-        id: "12313120Apple"
-    },
-    {
-        value: "-$9.99",
-        id: "12313121Dropbox"
-    },
-    {
-        value: "-$7.49",
-        id: "12313122Amazon"
-    }
 ]
