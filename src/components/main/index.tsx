@@ -1,6 +1,6 @@
 import Navbar from "./navbar";
 import Footer from "./footer";
-import Hist from "./history";
+import Hist from "./historic";
 import Spending from "./spending";
 
 const Main = () => {

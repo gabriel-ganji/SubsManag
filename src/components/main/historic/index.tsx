@@ -31,7 +31,7 @@ const Hist = () => {
   return (
     <div className="flex flex-col w-full px-4 py-4 h-[48vh]">
       <div className="flex justify-between items-end w-full">
-        <h3>History</h3>
+        <h3>Historic</h3>
         <button>See all</button>
       </div>
       <div className="w-full overflow-y-scroll">
