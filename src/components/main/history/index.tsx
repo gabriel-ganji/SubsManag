@@ -2,16 +2,19 @@ import { ReactNode } from "react";
 import { SiAppletv } from "react-icons/si";
 import { BsDropbox } from "react-icons/bs";
 import { SiPrime } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 type historyType = {
-  logo: ReactNode
-  name: string
-  description: string
-  value: string
-  date: string
+  logo: ReactNode;
+  image?: ReactNode;
+  name: string;
+  description: string;
+  value: string;
+  date: string;
+  id: string;
 }
 
-function Hist() {
+const Hist = () => {
 
   const mocked: historyType[] = (
     [
@@ -20,77 +23,95 @@ function Hist() {
         name: "Apple TV",
         description: "Premium Family",
         value: "-$4.99",
-        date: "Sep 29th"
+        date: "Sep 29th",
+        id: "12313120Apple"
       },
       {
         logo: <BsDropbox size="1.5rem" />,
         name: "Dropbox",
         description: "Advanced",
         value: "-$9.99",
-        date: "Sep 25th"
+        date: "Sep 25th",
+        id: "12313121Dropbox"
       },
       {
         logo: <SiPrime size="1.5rem" />,
         name: "Amazon Prime",
         description: "Stream",
         value: "-$7.49",
-        date: "Sep 10th"
+        date: "Sep 10th",
+        id: "12313122Amazon"
       },
       {
         logo: <SiAppletv size="1.5rem" />,
         name: "Apple TV",
         description: "Premium Family",
         value: "-$4.99",
-        date: "Sep 29th"
+        date: "Sep 29th",
+        id: "12313120Apple"
       },
       {
         logo: <BsDropbox size="1.5rem" />,
         name: "Dropbox",
         description: "Advanced",
         value: "-$9.99",
-        date: "Sep 25th"
+        date: "Sep 25th",
+        id: "12313121Dropbox"
       },
       {
         logo: <SiPrime size="1.5rem" />,
         name: "Amazon Prime",
         description: "Stream",
         value: "-$7.49",
-        date: "Sep 10th"
+        date: "Sep 10th",
+        id: "12313122Amazon"
       },
       {
         logo: <SiAppletv size="1.5rem" />,
         name: "Apple TV",
         description: "Premium Family",
         value: "-$4.99",
-        date: "Sep 29th"
+        date: "Sep 29th",
+        id: "12313120Apple"
       },
       {
         logo: <BsDropbox size="1.5rem" />,
         name: "Dropbox",
         description: "Advanced",
         value: "-$9.99",
-        date: "Sep 25th"
+        date: "Sep 25th",
+        id: "12313121Dropbox"
       },
       {
         logo: <SiPrime size="1.5rem" />,
         name: "Amazon Prime",
         description: "Stream",
         value: "-$7.49",
-        date: "Sep 10th"
+        date: "Sep 10th",
+        id: "12313122Amazon"
       }
     ]
   );
 
+  const navigate = useNavigate();
+
+  const handleClick = (serviceId: string) => {
+    navigate(`/service/${serviceId}`)
+  }
+
   return (
     <div className="flex flex-col w-full px-4 py-8 h-[50vh]">
       <div className="flex justify-between items-end w-full">
-        <h3 className="text-[1.5rem]">History</h3>
+        <h3>History</h3>
         <button>See all</button>
       </div>
       <div className="w-full overflow-y-scroll">
         {
           mocked.map((item: historyType) => (
-            <button className="flex gap-4 items-center w-full px-4 h-20 rounded-2xl mt-2 hover:bg-primary-light">
+            <button 
+              className="flex gap-4 items-center w-full px-5 py-12 h-20 rounded-2xl mt-2 hover:bg-primary-light"
+              onClick={() => handleClick(item.id)}
+            >
               <div className="bg-primary-extralight p-3 rounded-full">
                 {item.logo}
               </div>

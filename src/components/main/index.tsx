@@ -3,7 +3,7 @@ import Footer from "./footer";
 import Hist from "./history";
 import Spending from "./spending";
 
-function Main() {
+const Main = () => {
 
   return (
     <>

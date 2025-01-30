@@ -1,18 +1,20 @@
 import './App.css'
 import Main from './components/main'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Services from './components/services'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Service from './components/services/service'
 
 function App() {
 
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/service/:id" element={<Service />} />
         <Route path="/services" element={<Services />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<Main />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 

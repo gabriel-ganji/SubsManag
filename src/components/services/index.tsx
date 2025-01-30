@@ -1,22 +1,21 @@
-import Navbar from "./navbar";
-import { IoArrowBack, IoOptionsOutline } from "react-icons/io5";
-import { PiMagnifyingGlassLight } from "react-icons/pi";
-
-import { ReactNode, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaFigma } from "react-icons/fa";
+import { SiPrime } from "react-icons/si";
 import { SiAppletv } from "react-icons/si";
 import { BsDropbox } from "react-icons/bs";
-import { SiPrime } from "react-icons/si";
 import { SiNetflix } from "react-icons/si";
-import { FaFigma } from "react-icons/fa";
+import { ReactNode, useState } from "react";
+import { PiMagnifyingGlassLight } from "react-icons/pi";
+import { IoArrowBack, IoOptionsOutline } from "react-icons/io5";
 
 type ServicesType = {
-  logo: ReactNode
-  name: string
-  description: string
-  price: string
+  logo: ReactNode;
+  name: string;
+  description: string;
+  price: string;
 }
 
-function Services() {
+const Services = () => {
 
   const [isOn, setIsOn] = useState(false);
 
@@ -59,7 +58,9 @@ function Services() {
     <>
       <div className="flex flex-col items-center gap-4 px-4 pt-9 fixed top-0 w-full bg-primary z-10">
         <div className=" flex justify-center items-center w-full">
-          <IoArrowBack size="1.5rem" className="absolute left-4" />
+          <Link to="/" className="absolute left-4">
+            <IoArrowBack size="1.5rem" />
+          </Link>
           <h4>Services</h4>
         </div>
         <div className="flex items-center shadow-[0px_0px_2px_1px_rgba(255,255,255,0.1)] rounded-md w-full px-2 gap-2 mb-2">
@@ -77,7 +78,7 @@ function Services() {
       <div className="sm:p-12 px-4 flex-col w-full mb-12 mt-[22vh] sm:mt-[10vh]">
         {
           mocked.map((item: ServicesType) => (
-            <button className="flex flex-col gap-4 items-left bg-primary-light w-full h-auto mt-2 mb-2 rounded-2xl p-4">
+            <button className="flex flex-col gap-4 items-left bg-primary-light w-full h-auto mt-2 mb-2 rounded-2xl p-6">
               <div className="flex justify-between w-full">
                 <div className="flex flex-col items-start">
                   <h5>{item.name}</h5>
@@ -89,8 +90,8 @@ function Services() {
               </div>
               <div className="flex justify-between items-center w-full">
                 <div className="flex items-end">
-                  <h3>{item.price}</h3>
-                  <p className="text-primary-ultralight text-sm mb-2">$/month</p>
+                  <h2>{item.price}</h2>
+                  <p className="text-primary-ultralight text-sm mb-3">$/month</p>
                 </div>
                 <button
                   onClick={() => setIsOn(!isOn)}

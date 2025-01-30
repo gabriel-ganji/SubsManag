@@ -5,8 +5,9 @@ import { TbCoinFilled } from "react-icons/tb";
 import { GoHomeFill } from "react-icons/go";
 import { IoCloseOutline } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-function Navbar() {
+const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,12 +41,12 @@ function Navbar() {
             </button>
           </div>
           <nav className="flex flex-col p-6 space-y-4">
-            <a href="#" className="flex items-center gap-2 p-2 hover:bg-primary-light rounded-md">
+            <Link  to="/" className="flex items-center gap-2 p-2 hover:bg-primary-light rounded-md" onClick={() => setIsOpen(false)}>
               <GoHomeFill size="1.5rem" />Home
-            </a>
-            <a href="#" className="flex items-center gap-2 p-2 hover:bg-primary-light rounded-md">
+            </Link>
+            <Link to="/services" className="flex items-center gap-2 p-2 hover:bg-primary-light rounded-md">
               <TbCoinFilled size="1.5rem" /> Services
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

@@ -15,7 +15,7 @@
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 500;
   }
 
@@ -26,6 +26,10 @@
 
   h5 {
     font-size: 1.15rem;
+  }
+
+  p {
+    font-weight: 400;
   }
 
 }

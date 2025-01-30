@@ -1,4 +1,4 @@
-function Spending() {
+const Spending = () => {
 
     return (
       <div className="px-4 py-0 m-0 flex flex-col h-[30vh]">
