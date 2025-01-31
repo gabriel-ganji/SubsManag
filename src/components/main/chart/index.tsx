@@ -15,13 +15,18 @@ const chartConfig = {
                 show: false,
             },
         },
+        stroke: {
+            show: true,
+            width: 2,
+            colors: ["#333333"],
+        },
         dataLabels: {
             enabled: false,
         },
-        colors: ["gray"],
+        colors: ["#1b1b1b"],
         plotOptions: {
             bar: {
-                columnWidth: "96%",
+                columnWidth: "100%",
                 borderRadius: 2,
             },
         },
