@@ -16,11 +16,12 @@ const ServiceSelected = () => {
     return (
         <>
             <div className="flex flex-col items-center gap-4 px-4 pt-9 fixed top-0 w-full bg-primary z-10">
-                <div className=" flex justify-center items-center w-full">
-                    <button onClick={() => navigate(-1)} className="absolute left-4">
+                <div className=" flex justify-between items-center w-full">
+                    <button onClick={() => navigate(-1)}>
                         <IoArrowBack size="1.5rem" />
                     </button>
                     <h4>{servInfo.name}</h4>
+                    <button>Save</button>
                 </div>
             </div>
             <div className="flex flex-col gap-4 p-4">

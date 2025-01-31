@@ -1,26 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { servicesInfo, userServicesUse } from "../../../mocked";
-import { BothUserServicesType } from "../../../types";
+import userServicesActive from "../../../user";
 
 const Hist = () => {
-
-  const userServicesHistory: BothUserServicesType[] = userServicesUse.map((itemUser) => {
-    const foundService = servicesInfo.find((itemService) => itemUser.id === itemService.id);
-    if (foundService) {
-      return {...itemUser, ...foundService};
-    } else {
-      return {
-        name: "",
-        image: "",
-        logo: null,
-        description: "",
-        price: "0",
-        id: "",
-        value: "0",
-        date: "",
-      };
-    }
-  });
 
   const navigate = useNavigate();
 
@@ -36,9 +17,9 @@ const Hist = () => {
       </div>
       <div className="w-full overflow-y-scroll mb-12">
         {
-          userServicesHistory.map((item: BothUserServicesType) => (
+          userServicesActive.servicesInUse.map((item: any) => (
             <button
-            key={item.id}
+              key={item.id}
               className="flex gap-4 items-center w-full px-5 py-12 h-20 rounded-2xl mt-2 hover:bg-primary-light"
               onClick={() => handleClick(item.id)}
             >
@@ -48,10 +29,10 @@ const Hist = () => {
               <div className="flex w-full justify-between">
                 <div className="flex flex-col items-start">
                   <div>{item.name}</div>
-                  <div className="text-sm text-primary-ultralight">{item.description}</div>
+                  <div className="text-sm text-primary-ultralight">{item.plan_signature}</div>
                 </div>
                 <div className="flex flex-col">
-                  <div>{item.value}</div>
+                  <div>-${item.price}</div>
                   <div className="text-sm text-primary-ultralight">{item.date}</div>
                 </div>
               </div>

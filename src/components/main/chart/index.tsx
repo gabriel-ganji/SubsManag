@@ -59,8 +59,8 @@ export default function ExpensesChart() {
         },
         stroke: {
             show: true,
-            width: 2,
-            colors: ["#333333"],
+            width: 1,
+            colors: ["#666666"],
         },
         dataLabels: {
             enabled: false,
@@ -85,12 +85,12 @@ export default function ExpensesChart() {
             },
         },
         colors: series[0].data.map((_, index) =>
-            index === selectedBar ? "#388E3C" : "#1b1b1b"
+            index === selectedBar ? "#66BB6A" : "#1b1b1b"
         ),
         plotOptions: {
             bar: {
                 columnWidth: "100%",
-                borderRadius: 2,
+                borderRadius: 0,
                 distributed: true,
             },
         },
