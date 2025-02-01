@@ -11,16 +11,9 @@ const ServiceSelected = () => {
     const { id } = useParams();
     const servInfo = servicesInfo.filter(el => el.id === id)[0];
 
-    let signatureCycle;
     const signatureOptions: Array<string> = Object.keys(servInfo.plans.signature_options);
 
     const active = userServicesActive.servicesInUse.filter((el) => el?.id === id)[0];
-
-    if (active) {
-        signatureCycle = active.plan_cycle;
-    } else {
-        signatureCycle = "Month";
-    }
 
     return (
         <>
