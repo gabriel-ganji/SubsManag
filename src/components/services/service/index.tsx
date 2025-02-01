@@ -1,6 +1,7 @@
 import Toggle from "../../reusable/toggle";
 import { IoArrowBack } from "react-icons/io5";
 import { servicesInfo } from "../../../mocked";
+import userServicesActive from "../../../user";
 import { useNavigate, useParams } from "react-router-dom";
 
 const ServiceSelected = () => {
@@ -8,8 +9,18 @@ const ServiceSelected = () => {
     const navigate = useNavigate();
 
     const { id } = useParams();
-    const services = servicesInfo;
-    const servInfo = services.filter(el => el.id === id)[0];
+    const servInfo = servicesInfo.filter(el => el.id === id)[0];
+
+    let signatureCycle;
+    const signatureOptions: Array<string> = Object.keys(servInfo.plans.signature_options);
+
+    const active = userServicesActive.servicesInUse.filter((el) => el?.id === id)[0];
+
+    if (active) {
+        signatureCycle = active.plan_cycle;
+    } else {
+        signatureCycle = "Month";
+    }
 
     return (
         <>
@@ -26,28 +37,22 @@ const ServiceSelected = () => {
                 <div className="mt-20 h-[25vh] rounded-2xl overflow-hidden">
                     <img className="w-full h-full object-cover" src={servInfo.image} alt="" />
                 </div>
-                <div className="flex justify-between h-[11vh] w-full">
-                    <div className="flex flex-col items-center justify-center w-[32%] h-full border border-primary-extralight rounded-2xl bg-white">
-                        <p className="text-primary-ultralight">Basic</p>
-                        <div className="flex items-center">
-                            <h4 className="text-black">4,99</h4>
-                            <p className="text-sm text-primary-ultralight mt-1">$/m</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-[32%] h-full border border-primary-extralight rounded-2xl">
-                        <p className="text-primary-ultralight">Standard</p>
-                        <div className="flex items-center">
-                            <h4>7,49</h4>
-                            <p className="text-sm text-primary-ultralight">$/m</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-[32%] h-full border border-primary-extralight rounded-2xl">
-                        <p className="text-primary-ultralight">Premium</p>
-                        <div className="flex items-center">
-                            <h4>9,99</h4>
-                            <p className="text-sm text-primary-ultralight">$/m</p>
-                        </div>
-                    </div>
+                <div className="flex justify-between h-[11vh] w-full gap-2">
+                {
+                    signatureOptions.map((item) => {
+                        const signature = item.split("_")[0];
+                        const price_signature = servInfo.plans.signature_options[item];
+                        return (
+                            <div key={item+"plan"} className={`flex flex-col items-center justify-center w-full h-full border rounded-2xl border-primary-extralight ${active?.plan_signature === item ? 'bg-white' : 'text-white'}`}>
+                                <p className="text-primary-ultralight capitalize">{signature}</p>
+                                <div className="flex items-center">
+                                    <h4 className={`${active?.plan_signature === item && 'text-primary-dark'}`}>{price_signature}</h4>
+                                    <span className="text-sm text-primary-ultralight">$/m</span>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
                 </div>
                 <div className="flex flex-col gap-4 mt-2">
                     <h3>Billing</h3>

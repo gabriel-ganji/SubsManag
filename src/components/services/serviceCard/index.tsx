@@ -41,7 +41,7 @@ const ServiceCard = ({ info, activePlan }: Info) => {
             <div className="flex justify-between w-full">
                 <div className="flex flex-col items-start">
                     <h5>{info.name}</h5>
-                    <p className="text-sm text-primary-ultralight">{planSignature}</p>
+                    <p className="text-sm text-primary-ultralight capitalize">{planSignature}</p>
                 </div>
                 <div className="text-[1.5rem] bg-primary-extralight flex w-12 h-12 items-center justify-center rounded-full">
                     {info.logo}
@@ -50,7 +50,7 @@ const ServiceCard = ({ info, activePlan }: Info) => {
             <div className="flex justify-between items-center w-full">
                 <div className="flex items-end">
                     <h2>{planPrice}</h2>
-                    <p className="text-primary-ultralight text-sm mb-3">$/{planCycle}</p>
+                    <p className="text-primary-ultralight text-sm mb-3 lowercase">$/{planCycle}</p>
                 </div>
                 <Toggle state={activePlan} />
             </div>
