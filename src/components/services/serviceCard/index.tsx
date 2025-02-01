@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import { ServicesType } from "../../../types";
 import Toggle from "../../reusable/toggle";
+import { ServicesType } from "../../../types";
+import { useNavigate } from "react-router-dom";
 
 interface Info extends ServicesType {};
 
