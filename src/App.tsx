@@ -1,8 +1,7 @@
-import './App.css'
-import Main from './components/main'
-import Services from './components/services'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Service from './components/services/service'
+import Main from "./components/main";
+import Services from "./components/services";
+import Service from "./components/services/service";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 

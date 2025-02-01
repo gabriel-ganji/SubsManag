@@ -1,4 +1,4 @@
-import { useState } from "react";
+import Toggle from "../../reusable/toggle";
 import { IoArrowBack } from "react-icons/io5";
 import { servicesInfo } from "../../../mocked";
 import { useNavigate, useParams } from "react-router-dom";
@@ -6,8 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 const ServiceSelected = () => {
 
     const navigate = useNavigate();
-
-    const [isOn, setIsOn] = useState<boolean>(false);
 
     const { id } = useParams();
     const services = servicesInfo;
@@ -63,12 +61,7 @@ const ServiceSelected = () => {
                     <div className="flex flex-col bg-primary-light rounded-2xl p-5">
                         <div className="flex justify-between">
                             <h5>Repeat</h5>
-                            <button
-                                onClick={() => setIsOn(!isOn)}
-                                className={`relative w-10 h-5 flex items-center rounded-full px-[2px] py-[12px] transition-colors ${isOn ? "bg-green-500" : "bg-primary-ultralight"}`}
-                            >
-                                <div className={`w-5 h-5 rounded-full shadow-md transform transition-transform ${isOn ? "translate-x-4 bg-white" : "translate-x-0 bg-primary"}`} />
-                            </button>
+                            <Toggle />
                         </div>
                         <p className="text-sm text-primary-ultralight">Set a cycle for your plan</p>
                         <div className="flex gap-2 w-full mt-4">
