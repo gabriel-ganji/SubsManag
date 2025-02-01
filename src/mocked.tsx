@@ -40,8 +40,8 @@ export const servicesInfo: ServicesType[] = [
         description: "Advanced",
         plans: {
             signature_options: {
-                basic: 0,
-                standard: 0,
+                basic: 5.00,
+                standard: 10.00,
                 advanced: 20.00,
             },
             cycle: ["day", "Month", "year"],
@@ -55,8 +55,8 @@ export const servicesInfo: ServicesType[] = [
         description: "Premium",
         plans: {
             signature_options: {
-                basic: 0,
-                standard: 0,
+                basic: 3.80,
+                standard: 4.99,
                 premium: 9.99,
             },
             cycle: ["day", "Month", "year"],
@@ -70,8 +70,8 @@ export const servicesInfo: ServicesType[] = [
         description: "Premium Family",
         plans: {
             signature_options: {
-                basic: 0,
-                standard: 0,
+                basic: 5.30,
+                standard: 9.70,
                 premium_family: 14.95,
             },
             cycle: ["day", "Month", "year"],
@@ -85,8 +85,8 @@ export const servicesInfo: ServicesType[] = [
         description: "Professional",
         plans: {
             signature_options: {
-                basic: 0,
-                standard: 0,
+                basic: 3.25,
+                standard: 6.50,
                 professional: 12.00,
             },
             cycle: ["day", "Month", "year"],
@@ -101,8 +101,8 @@ export const servicesInfo: ServicesType[] = [
         plans: {
             signature_options: {
                 student: 7.49,
-                standard: 0,
-                premium: 0,
+                standard: 12.00,
+                premium: 17.99,
             },
             cycle: ["day", "Month", "year"],
         }
