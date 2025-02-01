@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 type PlansType = {
-    cycle: Array<string>;
+    cycles: Array<string>;
     signature_options: Record<string, number>;
 };
 
@@ -11,7 +11,6 @@ export type ServicesType = {
     image: string;
     logo: ReactNode;
     plans: PlansType;
-    description: string;
 };
 
 export type ServsInUseType = {
@@ -26,4 +25,15 @@ export type UserData = {
     name: string;
     email: string;
     servsInUse: ServsInUseType[],
+}
+
+export type ServInUseDatails = ServsInUseType & {
+    name: string;
+    logo: ReactNode;
+    price_signature: number;
+}
+
+export type UserServicesActive = {
+    user: UserData;
+    servicesInUse: (ServInUseDatails | null)[];
 }

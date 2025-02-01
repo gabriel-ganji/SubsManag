@@ -1,10 +1,18 @@
 import Toggle from "../../reusable/toggle";
-import { ServicesType } from "../../../types";
 import { useNavigate } from "react-router-dom";
+import { ServicesType, ServInUseDatails } from "../../../types";
 
-interface Info extends ServicesType {};
+function isServicesType(info: ServicesType | ServInUseDatails): info is ServicesType {
+    return (info as ServicesType).plans !== undefined;
+}
 
-const ServiceCard = ({info}: {info: Info}) => {
+type Info = {
+    info: (ServicesType | ServInUseDatails);
+    activePlan: boolean;
+    key: string;
+};
+
+const ServiceCard = ({ info, activePlan }: Info) => {
 
     const navigate = useNavigate();
 
@@ -12,14 +20,28 @@ const ServiceCard = ({info}: {info: Info}) => {
         navigate(`/service/${serviceId}`)
     }
 
-    const defaultPlanValue = Object.values(info.plans.signature_options)[1];
+    let planSignature: string = "Not Avaliable";
+    let planPrice: string = "0.00";
+    let planCycle: string = "N/A";
+
+    if (activePlan && !isServicesType(info)) {
+        planSignature = info!.plan_signature || planSignature;
+        planPrice = String(info.price_signature) || planPrice;
+        planCycle = info.plan_cycle || planCycle;
+    } else {
+        if (isServicesType(info)) {
+            planSignature = Object.keys(info.plans.signature_options)[1] || planSignature;
+            planPrice = String(Object.values(info.plans.signature_options)[1]) || planPrice;
+            planCycle = Object.values(info.plans.cycles)[1] || planCycle;
+        }
+    }
 
     return (
-        <div key={info.id} className="flex flex-col gap-4 items-left bg-primary-light w-full h-auto mt-2 mb-2 rounded-2xl p-6" onClick={() => handleClick(info.id)}>
+        <div className="flex flex-col gap-4 items-left bg-primary-light w-full h-auto mt-2 mb-2 rounded-2xl p-6" onClick={() => handleClick(info.id)}>
             <div className="flex justify-between w-full">
                 <div className="flex flex-col items-start">
                     <h5>{info.name}</h5>
-                    <p className="text-sm text-primary-ultralight">{info.description}</p>
+                    <p className="text-sm text-primary-ultralight">{planSignature}</p>
                 </div>
                 <div className="text-[1.5rem] bg-primary-extralight flex w-12 h-12 items-center justify-center rounded-full">
                     {info.logo}
@@ -27,10 +49,10 @@ const ServiceCard = ({info}: {info: Info}) => {
             </div>
             <div className="flex justify-between items-center w-full">
                 <div className="flex items-end">
-                    <h2>{defaultPlanValue}</h2>
-                    <p className="text-primary-ultralight text-sm mb-3">$/month</p>
+                    <h2>{planPrice}</h2>
+                    <p className="text-primary-ultralight text-sm mb-3">$/{planCycle}</p>
                 </div>
-                <Toggle />
+                <Toggle state={activePlan} />
             </div>
         </div>
     )

@@ -61,7 +61,7 @@ const ServiceSelected = () => {
                     <div className="flex flex-col bg-primary-light rounded-2xl p-5">
                         <div className="flex justify-between">
                             <h5>Repeat</h5>
-                            <Toggle />
+                            <Toggle state={true} />
                         </div>
                         <p className="text-sm text-primary-ultralight">Set a cycle for your plan</p>
                         <div className="flex gap-2 w-full mt-4">

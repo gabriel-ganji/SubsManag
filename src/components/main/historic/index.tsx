@@ -31,9 +31,9 @@ const Hist = () => {
                   <div>{item.name}</div>
                   <div className="text-sm text-primary-ultralight">{item.plan_signature}</div>
                 </div>
-                <div className="flex flex-col">
-                  <div>-${item.price}</div>
-                  <div className="text-sm text-primary-ultralight">{item.date}</div>
+                <div className="flex flex-col justify-center items-start">
+                  <div>-${item.price_signature}</div>
+                  <div className="text-sm text-primary-ultralight">{item.date_signature}</div>
                 </div>
               </div>
             </button>

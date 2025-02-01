@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import ServiceCard from "./serviceCard";
 import { ServicesType } from "../../types";
 import { servicesInfo } from "../../mocked";
+import userServicesActive from "../../user";
 import { PiMagnifyingGlassLight } from "react-icons/pi";
 import { IoArrowBack, IoOptionsOutline } from "react-icons/io5";
-import ServiceCard from "./serviceCard";
 
 const Services = () => {
 
@@ -30,13 +31,19 @@ const Services = () => {
       </div>
       <div className="sm:p-12 px-4 flex-col w-full mb-12 mt-[22vh] sm:mt-[10vh]">
         {
-          servicesInfo.map((item: ServicesType) => (
-            <ServiceCard info={item} key={item.id} />
-          ))
+          servicesInfo.map((servInfo: ServicesType) => {
+            const active = userServicesActive.servicesInUse.find((el) => el?.id === servInfo.id);
+            if (active) {
+              return <ServiceCard info={active} activePlan={true} key={servInfo.id} />;
+            } else {
+              return <ServiceCard info={servInfo} activePlan={false} key={servInfo.id} />;
+            }
+          })
         }
       </div>
     </>
   )
+
 }
 
 export default Services;
