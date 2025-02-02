@@ -1,9 +1,20 @@
+import { useEffect } from "react";
 import Main from "./components/main";
 import Services from "./components/services";
 import Service from "./components/services/service";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+
+  useEffect(() => {
+    const enterFullScreen = () => {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      }
+    };
+    enterFullScreen();
+  }, []);
 
   return (
     <BrowserRouter>
