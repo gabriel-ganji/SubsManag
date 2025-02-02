@@ -60,14 +60,14 @@ body {
 
   body {
     display: flex;
-    height: 100dvh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
   }
 
   #root {
     width: 700px;
-    height: 100dvh;
+    height: 100vh;
     display: block;
   }
 
