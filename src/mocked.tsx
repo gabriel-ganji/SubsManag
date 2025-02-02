@@ -24,7 +24,7 @@ export const user: UserData = {
         },
         {
             id: "12313122Amazon",
-            plan_signature: "student",
+            plan_signature: "easy",
             plan_cycle: "Month",
             date_signature: "Sep 10th",
         }
@@ -42,6 +42,7 @@ export const servicesInfo: ServicesType[] = [
                 basic: 5.00,
                 standard: 10.00,
                 advanced: 20.00,
+                master: 77.70
             },
             cycles: ["day", "Month", "year"],
         }
@@ -66,7 +67,6 @@ export const servicesInfo: ServicesType[] = [
         name: "Apple TV",
         image: "https://cdn.vox-cdn.com/thumbor/CmNJgSUD10NOWE7VItdyuWIxV-g=/0x0:2040x1360/1400x1400/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23988689/acastro_STK069_appleTVPlus_02.jpg",        plans: {
             signature_options: {
-                basic: 5.30,
                 standard: 9.70,
                 premium_family: 14.95,
             },
@@ -94,9 +94,9 @@ export const servicesInfo: ServicesType[] = [
         image: "https://tm.ibxk.com.br/2021/02/12/12224528436398.jpg",
         plans: {
             signature_options: {
-                student: 7.49,
-                standard: 12.00,
-                premium: 17.99,
+                easy: 7.49,
+                normal: 12.00,
+                hard: 17.99,
             },
             cycles: ["day", "Month", "year"],
         }

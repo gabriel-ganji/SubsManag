@@ -40,7 +40,7 @@ export default function ExpensesChart() {
 
     const series: { name: string, data: Array<number> }[] = [
         {
-            name: "Sales",
+            name: "Expenses",
             data: [50, 300, 420, 600, 250, 380],
         },
     ];

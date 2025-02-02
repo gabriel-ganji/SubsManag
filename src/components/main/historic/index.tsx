@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import userServicesActive from "../../../user";
 
@@ -19,25 +20,30 @@ const Hist = () => {
         {
           userServicesActive.servicesInUse.map((item: any) => {
 
-            const signature: string = item.plan_signature.replace("_", " ");
+            const id: string = item?.id || "";
+            const logo: ReactNode = item?.logo || "";
+            const signature: string = item?.plan_signature.replace("_", " ") || "";
+            const name: string = item?.name || "";
+            const price_signature: string = item?.price_signature || "";
+            const date_signature: string = item?.date_signature || "";
 
             return (
               <button
-                key={item.id}
+                key={id}
                 className="flex gap-4 items-center w-full px-5 py-12 h-20 rounded-2xl mt-2 hover:bg-primary-light"
-                onClick={() => handleClick(item.id)}
+                onClick={() => handleClick(id)}
               >
                 <div className="bg-primary-extralight p-3 rounded-full">
-                  {item.logo}
+                  {logo}
                 </div>
                 <div className="flex w-full justify-between">
                   <div className="flex flex-col items-start">
-                    <div>{item.name}</div>
+                    <div>{name}</div>
                     <span className="text-sm text-primary-ultralight capitalize">{signature}</span>
                   </div>
                   <div className="flex flex-col justify-center items-start">
-                    <div>-${item.price_signature}</div>
-                    <div className="text-sm text-primary-ultralight">{item.date_signature}</div>
+                    <div>-${price_signature}</div>
+                    <div className="text-sm text-primary-ultralight">{date_signature}</div>
                   </div>
                 </div>
               </button>

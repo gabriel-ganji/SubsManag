@@ -27,8 +27,8 @@ const ServiceSelected = () => {
                 </div>
             </div>
             <div className="flex flex-col gap-4 p-4">
-                <div className="mt-20 h-[25vh] rounded-2xl overflow-hidden">
-                    <img className="w-full h-full object-cover" src={servInfo.image} alt="" />
+                <div className="mt-20 h-[25vh] rounded-2xl overflow-hidden bg-primary-dark">
+                    <img className="w-full h-full object-cover sm:object-scale-down" src={servInfo.image} alt="" />
                 </div>
                 <div className="flex justify-between h-[11vh] w-full gap-2">
                 {
@@ -38,9 +38,9 @@ const ServiceSelected = () => {
                         return (
                             <div key={item+"plan"} className={`flex flex-col items-center justify-center w-full h-full border rounded-2xl border-primary-extralight ${active?.plan_signature === item ? 'bg-white' : 'text-white'}`}>
                                 <p className="text-primary-ultralight capitalize">{signature}</p>
-                                <div className="flex items-center">
+                                <div className="flex items-end">
                                     <h4 className={`${active?.plan_signature === item && 'text-primary-dark'}`}>{price_signature}</h4>
-                                    <span className="text-sm text-primary-ultralight">$/m</span>
+                                    <span className="text-sm text-primary-ultralight mb-1">$/m</span>
                                 </div>
                             </div>
                         )
