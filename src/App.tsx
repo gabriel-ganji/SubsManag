@@ -7,8 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
 
   useEffect(() => {
-    const enterFullScreen = () => {
-      const elem = document.documentElement;
+    const enterFullScreen = (): void => {
+      const elem: HTMLElement = document.documentElement;
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       }
