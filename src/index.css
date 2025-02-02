@@ -60,12 +60,14 @@ body {
 
   body {
     display: flex;
+    height: 100dvh;
     align-items: center;
     justify-content: center;
   }
 
   #root {
     width: 700px;
+    height: 100dvh;
     display: block;
   }
 
