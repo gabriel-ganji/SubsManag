@@ -16,7 +16,7 @@ const Hist = () => {
         <h3>Historic</h3>
         <button>See all</button>
       </div>
-      <div className="w-full overflow-y-scroll mb-12">
+      <div className="w-full overflow-y-scroll mb-16">
         {
           userServicesActive.servicesInUse.map((item: any) => {
 
