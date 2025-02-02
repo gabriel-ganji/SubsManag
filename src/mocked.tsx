@@ -27,7 +27,7 @@ export const user: UserData = {
             plan_signature: "easy",
             plan_cycle: "Month",
             date_signature: "Sep 10th",
-        }
+        },
     ]
 }
 
@@ -65,7 +65,7 @@ export const servicesInfo: ServicesType[] = [
         id: "12313120Apple",
         logo: <SiAppletv size="1.5rem" />,
         name: "Apple TV",
-        image: "https://cdn.vox-cdn.com/thumbor/CmNJgSUD10NOWE7VItdyuWIxV-g=/0x0:2040x1360/1400x1400/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23988689/acastro_STK069_appleTVPlus_02.jpg",        plans: {
+        image: "https://cdn.vox-cdn.com/thumbor/CmNJgSUD10NOWE7VItdyuWIxV-g=/0x0:2040x1360/1400x1400/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23988689/acastro_STK069_appleTVPlus_02.jpg", plans: {
             signature_options: {
                 standard: 9.70,
                 premium_family: 14.95,

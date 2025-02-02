@@ -10,14 +10,14 @@ const Services = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-4 px-4 pt-9 fixed top-0 w-full bg-primary z-10">
+      <div className="flex flex-col items-center gap-4 px-4 pt-9 fixed md:w-[700px] top-0 w-full bg-primary z-10">
         <div className=" flex justify-center items-center w-full">
           <Link to="/" className="absolute left-4">
             <IoArrowBack size="1.5rem" />
           </Link>
           <h4>Services</h4>
         </div>
-        <div className="flex items-center border border-primary-extralight rounded-md w-full px-2 gap-2 mb-2">
+        <div className="flex items-center border border-primary-extralight rounded-md w-full px-2 gap-2 mb-2 mt-12">
           <PiMagnifyingGlassLight size="1.5rem" />
           <input
             type="text"
@@ -29,7 +29,7 @@ const Services = () => {
           </button>
         </div>
       </div>
-      <div className="sm:p-12 px-4 flex-col w-full mb-12 mt-[22vh] sm:mt-[10vh]">
+      <div className="md:py-12 px-4 flex-col w-full mb-12 mt-48 md:mt-36">
         {
           servicesInfo.map((servInfo: ServicesType) => {
             const active = userServicesActive.servicesInUse.find((el) => el?.id === servInfo.id);

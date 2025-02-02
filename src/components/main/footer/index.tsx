@@ -5,7 +5,7 @@ import { PiPlus } from "react-icons/pi";
 const Footer = () => {
 
   return (
-    <div className="px-12 pt-2 pb-6 flex justify-between space-around absolute bottom-0 left-0 w-full bg-primary h-[auto]">
+    <div className="absolute left-auto right-auto bottom-0 left-0 w-full md:w-[700px] px-12 md:px-4 pt-2 pb-6 flex justify-between bg-primary">
       <button>
         <GoHomeFill size="1.5rem" />
       </button>

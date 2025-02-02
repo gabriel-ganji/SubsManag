@@ -17,8 +17,8 @@ const ServiceSelected = () => {
 
     return (
         <>
-            <div className="flex flex-col items-center gap-4 px-4 pt-9 fixed top-0 w-full bg-primary z-10">
-                <div className=" flex justify-between items-center w-full">
+            <div className="flex flex-col items-center gap-4 px-4 pt-9 fixed md:w-[700px] top-0 w-full bg-primary z-10">
+                <div className=" flex justify-between items-center w-full pb-2">
                     <button onClick={() => navigate(-1)}>
                         <IoArrowBack size="1.5rem" />
                     </button>
@@ -28,24 +28,24 @@ const ServiceSelected = () => {
             </div>
             <div className="flex flex-col gap-4 p-4">
                 <div className="mt-20 h-[25vh] rounded-2xl overflow-hidden bg-primary-dark">
-                    <img className="w-full h-full object-cover sm:object-scale-down" src={servInfo.image} alt="" />
+                    <img className="w-full h-full object-cover md:object-scale-down" src={servInfo.image} alt="" />
                 </div>
                 <div className="flex justify-between h-[11vh] w-full gap-2">
-                {
-                    signatureOptions.map((item) => {
-                        const signature = item.split("_")[0];
-                        const price_signature = servInfo.plans.signature_options[item];
-                        return (
-                            <div key={item+"plan"} className={`flex flex-col items-center justify-center w-full h-full border rounded-2xl border-primary-extralight ${active?.plan_signature === item ? 'bg-white' : 'text-white'}`}>
-                                <p className="text-primary-ultralight capitalize">{signature}</p>
-                                <div className="flex items-end">
-                                    <h4 className={`${active?.plan_signature === item && 'text-primary-dark'}`}>{price_signature}</h4>
-                                    <span className="text-sm text-primary-ultralight mb-1">$/m</span>
+                    {
+                        signatureOptions.map((item) => {
+                            const signature = item.split("_")[0];
+                            const price_signature = servInfo.plans.signature_options[item];
+                            return (
+                                <div key={item + "plan"} className={`flex flex-col items-center justify-center w-full h-full border rounded-2xl border-primary-extralight ${active?.plan_signature === item ? 'bg-white' : 'text-white'}`}>
+                                    <p className="text-primary-ultralight capitalize">{signature}</p>
+                                    <div className="flex items-end">
+                                        <h4 className={`${active?.plan_signature === item && 'text-primary-dark'}`}>{price_signature}</h4>
+                                        <span className="text-sm text-primary-ultralight mb-1">$/m</span>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
                 </div>
                 <div className="flex flex-col gap-4 mt-2">
                     <h3>Billing</h3>
