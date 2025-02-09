@@ -4,7 +4,6 @@ import Hist from "./historic";
 import Spending from "./spending";
 
 const Main = () => {
-
   return (
     <>
       <Navbar />
